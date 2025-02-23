@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ip-tool-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ip-tool
+  template:
+    metadata:
+      labels:
+        app: ip-tool
+    spec:
+      containers:
+      - name: ip-tool
+        image: <your-docker-image-here>
+        imagePullPolicy: IfNotPresent
